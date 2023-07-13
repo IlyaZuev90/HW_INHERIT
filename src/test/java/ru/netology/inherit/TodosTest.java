@@ -37,7 +37,7 @@ public class TodosTest {
 
         todos.add(simpleTask);
 
-        String query = new String("Позвонить");
+        String query = "Позвонить";
 
         Task[] expected = {simpleTask};
         Task[] actual = todos.search(query);
@@ -58,7 +58,7 @@ public class TodosTest {
 
         todos.add(meeting);
 
-        String query = new String("Приложение НетоБанка");
+        String query = "Приложение НетоБанка";
 
         Task[] expected = {meeting};
         Task[] actual = todos.search(query);
@@ -74,7 +74,7 @@ public class TodosTest {
 
         todos.add(epic);
 
-        String query = new String("Яйца");
+        String query = "Яйца";
 
         Task[] expected = {epic};
         Task[] actual = todos.search(query);
@@ -89,11 +89,11 @@ public class TodosTest {
 
         todos.add(simpleTask);
 
-        String query = new String("Молоко");
+        String query = "Молоко";
 
-        boolean expected = false;
+        String[] wrong = new String[0];
         Task[] actual = todos.search(query);
-        Assertions.assertNotEquals(expected, actual);
+        Assertions.assertArrayEquals(wrong, actual);
     }
 
     @Test
@@ -110,11 +110,11 @@ public class TodosTest {
 
         todos.add(meeting);
 
-        String query = new String("Позвонить родителям");
+        String query = "Позвонить родителям";
 
-        boolean expected = false;
+        String[] wrong = new String[0];
         Task[] actual = todos.search(query);
-        Assertions.assertNotEquals(expected, actual);
+        Assertions.assertArrayEquals(wrong, actual);
     }
 
     @Test
@@ -126,11 +126,11 @@ public class TodosTest {
 
         todos.add(epic);
 
-        String query = new String("Во вторник после обеда");
+        String query = "Во вторник после обеда";
 
-        boolean expected = false;
+        String[] wrong = new String[0];
         Task[] actual = todos.search(query);
-        Assertions.assertNotEquals(expected, actual);
+        Assertions.assertArrayEquals(wrong, actual);
     }
 
 }
